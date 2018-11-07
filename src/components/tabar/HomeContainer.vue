@@ -47,7 +47,7 @@ export default {
   methods: {
     getlunbo() {
       this.$http
-        .get("http://www.liulongbin.top:3005/api/getlunbo")
+        .get("api/getlunbo")
         .then(res => {
           // console.log(res.body);
           if (res.body.status === 0) {

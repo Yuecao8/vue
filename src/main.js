@@ -13,10 +13,20 @@ import router from './router.js';
 import VueResource from 'vue-resource';
 Vue.use(VueResource);
 
-import { Header, Swipe, SwipeItem } from 'mint-ui';
+// 配置根路径
+Vue.http.options.root = 'http://www.liulongbin.top:3005';
+
+// 格式化日期的过滤器（全局）
+const moment = require('moment');
+Vue.filter('dateFormat', function (dataStr) {
+    return moment(dataStr).format('YYYY年MM月DD HH:mm:ss');
+  })
+
+import { Header, Swipe, SwipeItem ,Button} from 'mint-ui';
 Vue.component(Header.name, Header);
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
+Vue.component(Button.name, Button);
 
 
 var vm = new Vue({
